@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Navigation</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        select { padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h2>Select Your Destination</h2>
+    <select id="locationDropdown">
+        <option value="">--Choose Location--</option>
+        <option value="A1">A1 Building</option>
+        <option value="A2">A2 Building</option>
+        <option value="A3">A3 Building</option>
+        <option value="Parking">Parking</option>
+        <option value="Canteen">Canteen</option>
+        <option value="GirlsHostel">Girls' Hostel</option>
+        <option value="BoysHostel">Boys' Hostel</option>
+        <option value="FE">FE Building</option>
+    </select>
+
+    <script>
+        document.getElementById("locationDropdown").addEventListener("change", function() {
+            var selectedLocation = this.value;
+            if (selectedLocation) {
+                alert("You selected: " + selectedLocation);
+                // In future, you can redirect to a map or AR navigation
+            }
+        });
+    </script>
+</body>
+</html>
