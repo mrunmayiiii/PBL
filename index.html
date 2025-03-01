@@ -5,32 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Navigation</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-        select { padding: 10px; font-size: 16px; }
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        select, button { padding: 10px; margin: 10px; }
     </style>
 </head>
 <body>
     <h2>Select Your Destination</h2>
-    <select id="locationDropdown">
-        <option value="">--Choose Location--</option>
-        <option value="A1">A1 Building</option>
-        <option value="A2">A2 Building</option>
-        <option value="A3">A3 Building</option>
-        <option value="Parking">Parking</option>
-        <option value="Canteen">Canteen</option>
-        <option value="GirlsHostel">Girls' Hostel</option>
-        <option value="BoysHostel">Boys' Hostel</option>
-        <option value="FE">FE Building</option>
+    
+    <select id="locationSelect">
+        <option value="">--Choose a location--</option>
+        <option value="https://maps.app.goo.gl/qf6Qh4RQJbv8zsHt6">A1 Building</option>
+        <option value="https://maps.app.goo.gl/GoZ4LBHQewUf8b3eA">A2 Building</option>
+        <option value="https://maps.app.goo.gl/GoZ4LBHQewUf8b3eA">A3 Building</option>
+        <option value="https://maps.app.goo.gl/ay1KdjioFSAmqQ5s9">Parking</option>
+        <option value="https://maps.app.goo.gl/LYZAc2iYqhNHM1fQ6">Canteen</option>
+        <option value="https://maps.app.goo.gl/Wp3XmAVpB4Gww2G87">Girls' Hostel</option>
+        <option value="https://maps.app.goo.gl/grZ81arvMJuNHhys5">Boys' Hostel</option>
+        <option value="https://maps.app.goo.gl/L4yN237wNCsHF9sEA">FE Building</option>
+        <option value="https://maps.app.goo.gl/nciCKokNdgT8FdLm6">EDC</option>
+
     </select>
 
+    <br>
+    <button onclick="navigate()">Go</button>
+
     <script>
-        document.getElementById("locationDropdown").addEventListener("change", function() {
-            var selectedLocation = this.value;
-            if (selectedLocation) {
-                alert("You selected: " + selectedLocation);
-                // In future, you can redirect to a map or AR navigation
+        function navigate() {
+            let dropdown = document.getElementById("locationSelect");
+            let url = dropdown.value;
+            if (url) {
+                window.location.href = url;
+            } else {
+                alert("Please select a location!");
             }
-        });
+        }
     </script>
 </body>
 </html>
+
